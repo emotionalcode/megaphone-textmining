@@ -8,9 +8,8 @@ from keras import layers, models
 from megaphone_tokenizer.datasets import megaphones
 
 class Data:
-    def __init__(self, max_features=20000, maxlen=80):
-        (x_train, y_train), (x_test, y_test) = megaphones.load_data(
-            num_words=max_features)
+    def __init__(self, max_features=20000, maxlen=37):
+        (x_train, y_train), (x_test, y_test) = megaphones.load_data()
         x_train = sequence.pad_sequences(x_train, maxlen=maxlen)
         x_test = sequence.pad_sequences(x_test, maxlen=maxlen)
 
